@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            background:url('/static/20120426143433.jpg') no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 600px;
+            height: 728px;
+            margin: 0 auto;
+            
+
+        }
+        #err{
+            color:red;
+            font-size: 15px;
+        }
+        #ok{
+            color:darkorange;
+            font-size: 15px;
+        }
+        img{
+            position: fixed;
+            left: 70%;
+            top:60%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="box">
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="{{ url_for("index") }}">返回首页</a></li>
+          </ul>
+        <h3 class="text-center">欢迎来到小杰学生</h3>
+        <h3 class="text-center">管理系统</h3>
+        <form class="form-inline" method="POST">
+            <div class="form-group " style="display: block;margin: 15px 0;">
+              <div class="input-group">
+                <div class="input-group-addon">ID</div>
+                <input name="id" type="text" class="form-control" id="exampleInputAmount" placeholder="请输入学号"> <br>
+              </div>
+            </div>
+            <div class="form-group" style="display: block;margin: 15px 0;">
+                <div class="input-group">
+                  <div class="input-group-addon">姓名</div>
+                  <input name="name" type="text" class="form-control" id="exampleInputAmount" placeholder="请输入姓名"> <br>
+                </div>
+              </div>
+              <div class="form-group" style="display: block;margin: 15px 0;">
+                <div class="input-group">
+                  <div class="input-group-addon">english成绩</div>
+                  <!-- <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入english成绩"><br> -->
+                  <select name="e_score" id="add_label1" class="form-control">
+                </select>
+                </div>
+              </div>
+              <div class="form-group" style="display: block;margin: 15px 0;">
+                <div class="input-group">
+                  <div class="input-group-addon">python成绩</div>
+                  <!-- <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入python成绩"> <br> -->
+                  <select name="p_score" id="add_label2" class="form-control">
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" style="display: block;margin: 15px 0;">
+                <div class="input-group">
+                  <div class="input-group-addon">C语言成绩</div>
+                  <!-- <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入C语言成绩"> <br> -->
+                  <select name="c_score" id="add_label3" class="form-control">
+                </select>
+                </div>
+              </div>
+            <button id="tijiao" type="submit" class="btn btn-primary">提交</button>
+        </form>
+        
+        <div id="err">{{ err }}</div>
+        <div id="ok">{{ ok }}</div>
+        
+    </div>
+    <img src="/static/r1.png" alt="">
+    
+      
+</body>
+<script src="/static/js/jquery-3.4.1.js"></script>
+<script src="/static/js/jquery-3.4.1.min.js"></script>
+<script>
+    $(function(){
+        var i = 0
+        for(i;i<101;i++){
+            var new_id = "one"+i
+            $("#add_label1").append("<option id="+new_id+">"+i+"</option>")
+            $("#add_label2").append("<option id="+new_id+">"+i+"</option>")
+            $("#add_label3").append("<option id="+new_id+">"+i+"</option>")
+        }; 
+        
+});
+</script>
+</html>

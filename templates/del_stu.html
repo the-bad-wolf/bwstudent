@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除学生信息</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            background:url('/static/20120426143433.jpg') no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            position: fixed;
+            left: 70%;
+            top:60%;
+        }
+        #box{
+            width: 600px;
+            height: 728px;
+            margin: 0 auto;
+            
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="{{ url_for('index') }}">返回首页</a></li>
+        </ul>
+        <form class="form-inline" method="POST">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input name="stu_id" type="text" class="form-control" id="exampleInputAmount" placeholder="请输入要删除的学生学号">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">确定</button>
+          </form>
+          <div style="color:red;font-size:20px">{{ of }}</div>
+    </div>
+    <img src="/static/r1.png" alt="">
+</body>
+</html>

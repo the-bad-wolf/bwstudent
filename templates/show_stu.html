@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成绩排序</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            background:url('/static/20120426143433.jpg') no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            position: fixed;
+            left: 70%;
+            top:60%;
+        }
+        #box{
+            width: 600px;
+            height: 728px;
+            margin: 0 auto;
+            
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="{{ url_for("index") }}">返回首页</a></li>
+        </ul>
+        <table class="table table-hover">
+            <td class="active">学号</td>
+            <td class="active">姓名</td>
+            <td class="active">python成绩</td>
+            <td class="active">English成绩</td>
+            <td class="active">c语言分数</td>
+            <td class="active">总分</td>
+            {% for i in stu_list1 %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.python_score}}</td>
+                    <td>{{i.english_score}}</td>
+                    <td>{{i.C_score}}</td>
+                    <td>{{i.score_sum}}</td>
+                </tr>
+            {% endfor %}
+          </table>
+    </div>
+    <img src="/static/r1.png" alt="">
+</body>
+</html>
